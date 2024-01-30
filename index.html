@@ -1,23 +1,36 @@
 <svg id="fundraising-thermometer-654" width="800" height="1050"></svg>
 <script>
-  const POINTS_COMPLETED = 13 // change this
-  var fundraising_thermometer_654 = {"layout":"1","fill-color":"rgba(231, 97, 81, 1)","goal-amount":"19","progress-amount":POINTS_COMPLETED,"show-goal-amount":"1","show-progress-percentage":"1","dark-background-mode":"1"};
+  var POINTS_COMPLETED = 13 // change this
+  var POINTS_TO_COMPLETE = 19
+  var fundraising_thermometer_654 = {"layout":"1","fill-color":"rgba(231, 97, 81, 1)","goal-amount":POINTS_TO_COMPLETE,"progress-amount":POINTS_COMPLETED,"show-goal-amount":"1","show-progress-percentage":"1","dark-background-mode":"1"};
 </script>
 <script for="fundraising-thermometer-654" type="text/javascript" src="https://d22knjn4n6hjqd.cloudfront.net/thermometer/embed.js"></script>
+<svg id="fundraising-thermometer-655" width="800" height="1050"></svg>
+<script>
+  var POINTS_COMPLETED = 6 // change this
+  var POINTS_TO_COMPLETE = 44
+  var fundraising_thermometer_655 = {"layout":"1","fill-color":"rgba(231, 97, 81, 1)","goal-amount":POINTS_TO_COMPLETE,"progress-amount":POINTS_COMPLETED,"show-goal-amount":"1","show-progress-percentage":"1","dark-background-mode":"1"};
+</script>
+<script for="fundraising-thermometer-655" type="text/javascript" src="https://d22knjn4n6hjqd.cloudfront.net/thermometer/embed.js"></script>
 <style>
-  #fundraising-thermometer-654 {
+  #fundraising-thermometer-654,#fundraising-thermometer-655 {
     height: 100%;
     width: 100%;
   }
   body {
+    display: flex;
     background: #192639;
   }
 </style>
 <script>
   window.onload = () => {
     console.log('hi')
-    goalText = document.getElementsByClassName('svg-goal-textarea')[0]
-    goalText.textContent = goalText.textContent.replace('$', '')
-    goalText.textContent = goalText.textContent.replace('GOAL', 'TOTAL POINTS')
+    goalTextElements = document.getElementsByClassName('svg-goal-textarea')
+    Array.from(goalTextElements).forEach((goalText, i) => {
+      title = i == 0 ? '5 STARS' : '4 STARS'
+      goalText.textContent = goalText.textContent.replace('$', '')
+      goalText.textContent = goalText.textContent.replace('GOAL', title)
+      goalText.textContent = goalText.textContent + ' points'
+    })
   }
 </script>
