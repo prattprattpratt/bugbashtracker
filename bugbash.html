@@ -1,0 +1,22 @@
+<svg id="fundraising-thermometer-654" width="800" height="1050"></svg>
+<script>
+  var fundraising_thermometer_654 = {"layout":"1","fill-color":"rgba(231, 97, 81, 1)","goal-amount":"18","progress-amount":"5","show-goal-amount":"1","show-progress-percentage":"1","dark-background-mode":"1"};
+</script>
+<script for="fundraising-thermometer-654" type="text/javascript" src="https://d22knjn4n6hjqd.cloudfront.net/thermometer/embed.js"></script>
+<style>
+  #fundraising-thermometer-654 {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    background: #192639;
+  }
+</style>
+<script>
+  window.onload = () => {
+    console.log('hi')
+    goalText = document.getElementsByClassName('svg-goal-textarea')[0]
+    goalText.textContent = goalText.textContent.replace('$', '')
+    goalText.textContent = goalText.textContent.replace('GOAL', 'TOTAL POINTS')
+  }
+</script>
